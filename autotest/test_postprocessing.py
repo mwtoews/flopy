@@ -582,4 +582,4 @@ def test_get_sat_thickness_gradients(function_tmpdir):
     sat_thick = m.modelgrid.saturated_thickness(hds, mask=nodata)
     assert (
         np.abs(np.sum(sat_thick[:, 1, 1] - np.array([0.2, 1.0, 1.0]))) < 1e-6
-    ), "failed saturated thickness comparison (grid.thick())"
+    ), "failed saturated thickness comparison"

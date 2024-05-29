@@ -421,14 +421,6 @@ class Grid:
         """
         return -np.diff(self.top_botm, axis=0).reshape(self._botm.shape)
 
-    @property
-    def thick(self):
-        """Raises AttributeError, use :meth:`cell_thickness`."""
-        # DEPRECATED since version 3.4.0
-        raise AttributeError(
-            "'thick' has been removed; use 'cell_thickness()'"
-        )
-
     def saturated_thickness(self, array, mask=None):
         """
         Get the saturated thickness for a structured, vertex, or unstructured
@@ -465,13 +457,6 @@ class Grid:
             for mask_value in mask:
                 thickness[np.where(array == mask_value)] = np.nan
         return thickness
-
-    def saturated_thick(self, array, mask=None):
-        """Raises AttributeError, use :meth:`saturated_thickness`."""
-        # DEPRECATED since version 3.4.0
-        raise AttributeError(
-            "'saturated_thick' has been removed; use 'saturated_thickness()'"
-        )
 
     @property
     def units(self):
